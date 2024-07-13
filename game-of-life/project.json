@@ -1,27 +1,27 @@
 {
-  "name": "july-test",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "game-of-life",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "app",
-  "sourceRoot": "apps/july-test/src",
+  "sourceRoot": "game-of-life/src",
   "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/july-test",
-        "index": "apps/july-test/src/index.html",
-        "browser": "apps/july-test/src/main.ts",
+        "outputPath": "dist/game-of-life",
+        "index": "game-of-life/src/index.html",
+        "browser": "game-of-life/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/july-test/tsconfig.app.json",
+        "tsConfig": "game-of-life/tsconfig.app.json",
         "assets": [
           {
             "glob": "**/*",
-            "input": "apps/july-test/public"
+            "input": "game-of-life/public"
           }
         ],
-        "styles": ["apps/july-test/src/styles.css"],
+        "styles": ["game-of-life/src/styles.css"],
         "scripts": []
       },
       "configurations": {
@@ -52,10 +52,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "buildTarget": "july-test:build:production"
+          "buildTarget": "game-of-life:build:production"
         },
         "development": {
-          "buildTarget": "july-test:build:development"
+          "buildTarget": "game-of-life:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -63,7 +63,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "buildTarget": "july-test:build"
+        "buildTarget": "game-of-life:build"
       }
     },
     "lint": {
@@ -73,7 +73,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/july-test/jest.config.ts"
+        "jestConfig": "game-of-life/jest.config.ts"
       }
     }
   }

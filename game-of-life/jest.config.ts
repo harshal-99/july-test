@@ -1,9 +1,9 @@
 /* eslint-disable */
 export default {
-  displayName: 'july-test',
-  preset: '../../jest.preset.js',
+  displayName: 'game-of-life',
+  preset: '../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../coverage/apps/july-test',
+  coverageDirectory: '../coverage/game-of-life',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',
