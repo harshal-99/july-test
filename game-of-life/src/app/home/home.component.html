@@ -1,10 +1,13 @@
-<div class="w-full h-full flex justify-center items-center" *ngFor="let row of grid$ | async">
-  <div class="flex border-t[0.5px] border-b[0.5px] border-black border-solid w-max">
-    <ng-container *ngFor="let cell of row">
-      <div class="flex w-6 h-6 border border-solid border-black" [ngClass]="{'bg-orange-500': cell}"></div>
-    </ng-container>
+@for (row of (grid$ |async); let idx = $index; track idx) {
+  <div class="w-full h-full flex justify-center items-center">
+    <div class="flex border-t[0.5px] border-b[0.5px] border-black border-solid w-max">
+      @for (cell of row; let idx = $index; track idx) {
+        <div class="flex w-6 h-6 border border-solid border-black" [ngClass]="{'bg-orange-500': cell}"></div>
+      }
+    </div>
   </div>
-</div>
+}
+
 
 <div class="flex justify-around mt-3">
   <button *ngIf="(gameStarted$ | async) === false" (click)="onStart()">Start</button>
