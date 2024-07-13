@@ -1,1 +1,14 @@
-<p>home works!</p>
+<div class="w-full h-full flex justify-center items-center" *ngFor="let row of grid$ | async">
+  <div class="flex border-t[0.5px] border-b[0.5px] border-black border-solid w-max">
+    <ng-container *ngFor="let cell of row">
+      <div class="flex w-6 h-6 border border-solid border-black" [ngClass]="{'bg-orange-500': cell}"></div>
+    </ng-container>
+  </div>
+</div>
+
+<div class="flex justify-around mt-3">
+  <button *ngIf="(gameStarted$ | async) === false" (click)="onStart()">Start</button>
+  <button *ngIf="gameStarted$ | async" (click)="onStop()">Stop</button>
+  <button (click)="onNext()">Next</button>
+  <button (click)="onReset()">Reset</button>
+</div>
