@@ -7,7 +7,7 @@ import { AppState } from '../../app-state';
 import { selectGameStarted } from './game-state.selectors';
 
 @Injectable({
-  providedIn: 'root,
+  providedIn: 'root',
 })
 export class GameStateEffects {
   actions$ = inject(Actions);

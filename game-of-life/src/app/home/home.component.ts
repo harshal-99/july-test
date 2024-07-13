@@ -22,7 +22,6 @@ export class HomeComponent implements OnInit {
   store = inject(Store<AppState>);
   grid$ = this.store.select(selectGrid);
   gameStarted$ = this.store.select(selectGameStarted);
-
   ngOnInit() {
     this.store.dispatch(createInitialGrid({ rows: this.createGrid() }));
   }

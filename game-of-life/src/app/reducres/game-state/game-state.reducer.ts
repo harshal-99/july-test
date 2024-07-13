@@ -18,7 +18,7 @@ export const gameStateReducer = createReducer(
   on(GameStateActions.createInitialGrid, (state, { rows }) => ({
     ...state,
     gameStarted: false,
-    grid: row,
+    grid: rows,
   })),
   on(GameStateActions.updateGame, (state) => {
     const newGrid = state.grid.map((row, i) => {
@@ -31,7 +31,7 @@ export const gameStateReducer = createReducer(
           state.grid[i]?.[j + 1],
           state.grid[i + 1]?.[j - 1],
           state.grid[i + 1]?.[j],
-          state.grid[i + 1]?.[j + 1,
+          state.grid[i + 1]?.[j + 1],
         ].filter(Boolean).length;
         if (cell) {
           return neighbors === 2 || neighbors === 3;
